@@ -1,0 +1,33 @@
+// koroFileHeader vscode注释插件
+// 文档地址: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+// 使用方法: koroFileHeader是一个vscode插件，所以将koroFileHeader的配置项追加到vscode的配置项中，重新打开vscode即可
+// 函数注释快捷指令: command + control + T
+// 头文件注释快捷指令: command + control + I
+// 如何打开vscode配置项: 进入vscode > 输入 command + shift + P 打开搜索 > 输入 >open user settings > 打开 settings.json文件 
+{
+    // fileheader.customMade 头部注释配置规则
+    "fileheader.customMade": {
+        // 自动添加头部支持 关闭
+        "autoAdd": false
+    },
+    // fileheader.configObj 自定义配置规则
+    "fileheader.configObj": {
+        // 新建文件自动添加头部注释
+        "createHeader": false,
+        // 头部注释等宽设置
+        "wideSame": true,
+        "wideNum": 20, // 字段长度 默认为13
+        // 函数参数外形自定义 {number}
+        "functionParamsShape": ["{", "}"],
+        // 函数参数没有类型时的默认值 {type}
+        "functionTypeSymbol": "type",
+        // 参数类型 和 参数的位置自定义
+        "typeParamOrder": "param type",
+    },
+    // fileheader.customMade 函数注释配置规则
+    "fileheader.cursorMode": {
+        "description": "",
+        "param": "param",
+        "return": "return"
+    }
+}
