@@ -1,0 +1,49 @@
+{
+    "env": {
+        // 浏览器环境中的全局变量。
+        "browser": true,
+        "es2021": true
+    },
+    // ESLint 默认解析器是 espree 可以指定不同的解析器，只要解析器符合以下规则
+    // 1、它必须是一个 Node 模块，可以从它出现的配置文件中加载。通常，这意味着应该使用 npm 单独安装解析器包。
+    // 它必须符合 parser interface。(https://cn.eslint.org/docs/developer-guide/working-with-plugins#working-with-custom-parsers)
+    "parser": "espree",
+    // 解析器配置
+    "parserOptions": {
+        // ECMAScript 版本 例如ECMAScript 2015(ES5) 对应 6
+        "ecmaVersion": 13,
+        // 资源类型 模块 还是 script
+        "sourceType": "script",
+        // 额外的语言特性
+        "ecmaFeatures": {
+            // 允许在全局作用域下使用 return 语句
+            "globalReturn": false, 
+            // 启用全局 strict mode (如果 ecmaVersion 是 5 或更高)
+            "impliedStrict": true,
+            // 启用 JSX
+            "jsx": false,
+            // 不要使用启用实验性的 object rest/spread properties 支持。(重要：这是一个实验性的功能,在未来可能会有明显改变。 建议你写的规则 不要 依赖该功能，除非当它发生改变时你愿意承担维护成本。)
+            "experimentalObjectRestSpread": false
+        }
+    },
+    // 全局变量 当访问当前源文件内未定义的变量时，no-undef 规则将发出警告
+    "globals": {
+        // 只读
+        "JQuery": "readonly",
+        // 可重写
+        "customGlobalBehavior": "writable"
+    },
+    // 一个配置文件可以被基础配置中的已启用的规则继承
+    "extends": [
+        // "google"
+    ],
+    // rules 针对扩展eslint规则 可以启用额外的规则 也可以改变规则的级别 也可以覆盖基础配置的规则
+    "rules": {
+        // 
+        "quotes": ["error", "double"],
+        // off 关闭规则 | warn 使用警告级别的错误(不会导致程序退出) | error 使用错误级别的错误(当被触发的时候，程序会退出)
+        "no-console": "warn"
+    }
+    // ESLint忽略校验文件
+    // "eslintIgnore": ["hello.js"]
+}
